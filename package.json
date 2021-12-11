@@ -1,0 +1,45 @@
+{
+	"name": "lottiefiles",
+	"version": "0.1.0",
+	"engines": {
+		"sketch": ">=3.0"
+	},
+	"skpm": {
+		"name": "LottieFiles",
+		"manifest": "src/manifest.json",
+		"main": "lottiefiles.sketchplugin",
+		"assets": [
+			"assets/**/*"
+		],
+		"sketch-assets-file": "sketch-assets/icons.sketch"
+	},
+	"scripts": {
+		"build": "skpm-build",
+		"build:css": "npx tailwindcss -i ./src/App/style.css -o ./resources/style.css",
+		"watch": "skpm-build --watch",
+		"start": "npm run build:css && skpm-build --watch",
+		"postinstall": "npm run build && skpm-link"
+	},
+	"devDependencies": {
+		"@skpm/builder": "^0.7.4",
+		"@skpm/extract-loader": "^2.0.2",
+		"@types/react": "^17.0.37",
+		"autoprefixer": "^10.4.0",
+		"css-loader": "^0.28.11",
+		"html-loader": "^0.5.5",
+		"postcss-import": "^14.0.2",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"tailwindcss": "^3.0.1",
+		"ts-loader": "~8.2.0",
+		"typescript": "^4.5.3"
+	},
+	"resources": [
+		"resources/**/*.js"
+	],
+	"dependencies": {
+		"recoil": "^0.5.2",
+		"sketch-module-web-view": "^3.1.4"
+	},
+	"author": "Kelly Anyi <kellypurai@gmail.com>"
+}

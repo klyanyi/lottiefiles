@@ -15,7 +15,7 @@
 	},
 	"scripts": {
 		"build": "skpm-build",
-		"build:css": "npx tailwindcss -i ./src/App/style.css -o ./resources/style.css",
+		"build:css": "npx tailwindcss build -i ./src/components/style.css -o ./resources/style.css",
 		"watch": "skpm-build --watch",
 		"start": "npm run build:css && skpm-build --watch",
 		"postinstall": "npm run build && skpm-link"
@@ -38,6 +38,7 @@
 		"resources/**/*.js"
 	],
 	"dependencies": {
+		"react-router-dom": "^6.1.0",
 		"recoil": "^0.5.2",
 		"sketch-module-web-view": "^3.1.4"
 	},

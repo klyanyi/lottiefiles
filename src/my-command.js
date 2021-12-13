@@ -7,8 +7,8 @@ const webviewIdentifier = "lottiefiles.webview";
 export default function () {
 	const options = {
 		identifier: webviewIdentifier,
-		width: 240,
-		height: 180,
+		width: 320,
+		height: 480,
 		show: false,
 	};
 

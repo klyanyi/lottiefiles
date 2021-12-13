@@ -47,4 +47,5 @@ module.exports = function (config, entry) {
 		use: "ts-loader",
 		exclude: /node_modules/,
 	});
+	config.resolve.extensions.push(".tsx", ".ts", ".js");
 };

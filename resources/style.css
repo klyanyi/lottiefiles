@@ -423,6 +423,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.border-b-2 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+html, body {
+  color: #3d4852;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -435,10 +448,58 @@ h2 {
   line-height: 1.75rem;
 }
 
-.font-bold {
-  font-weight: 700;
+.lt-input-container {
+  position: relative;
 }
 
-.lt {
-  padding: 16px;
+.lt-input-container .lt-icon {
+  position: absolute;
+  top: 25px;
+  left: 5%;
+}
+
+.lt-input-container input {
+  width: 100vw;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-b-gray-200 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
 }

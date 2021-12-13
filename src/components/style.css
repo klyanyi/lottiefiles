@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    color: #3d4852;
+    @apply text-sm bg-white;
+  }
+  h1 {
+    @apply text-2xl text-blue-200;
+  }
+  h2 {
+    @apply text-xl;
+  }
+
+  .lt-input-container {
+    position: relative;
+  }
+  .lt-input-container .lt-icon {
+    position: absolute;
+    top: 25%;
+    left: 8px;
+  }
+  .lt-input-container input {
+    @apply w-screen;
+  }
+}

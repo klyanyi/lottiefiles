@@ -24,6 +24,7 @@
 		"@skpm/builder": "^0.7.4",
 		"@skpm/extract-loader": "^2.0.2",
 		"@types/react": "^17.0.37",
+		"@types/react-dom": "^17.0.11",
 		"autoprefixer": "^10.4.0",
 		"css-loader": "^0.28.11",
 		"html-loader": "^0.5.5",

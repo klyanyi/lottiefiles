@@ -454,8 +454,8 @@ h2 {
 
 .lt-input-container .lt-icon {
   position: absolute;
-  top: 25px;
-  left: 5%;
+  top: 25%;
+  left: 8px;
 }
 
 .lt-input-container input {

@@ -1,3 +1,5 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
 import App from "../src/components/App.tsx";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,11 +10,18 @@ document.addEventListener("contextmenu", (e) => {
 	e.preventDefault();
 });
 
+const client = new ApolloClient({
+	uri: "https://graphql.lottiefiles.com/",
+	cache: new InMemoryCache(),
+});
+
 (() => {
 	ReactDOM.render(
-		<RecoilRoot>
-			<App />
-		</RecoilRoot>,
+		<ApolloProvider client={client}>
+			<RecoilRoot>
+				<App />
+			</RecoilRoot>
+		</ApolloProvider>,
 		document.getElementById("root")
 	);
 })();

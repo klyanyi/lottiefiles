@@ -39,6 +39,9 @@
 		"resources/**/*.js"
 	],
 	"dependencies": {
+		"@apollo/client": "^3.5.6",
+		"graphql": "^16.1.0",
+		"lottie-web": "^5.8.1",
 		"react-router-dom": "^6.1.0",
 		"recoil": "^0.5.2",
 		"sketch-module-web-view": "^3.1.4"

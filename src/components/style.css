@@ -14,15 +14,90 @@
     @apply text-xl;
   }
 
-  .lt-input-container {
+  /*
+   * Tabs
+   */
+  .lf-tabs {
+    @apply flex;
+  }
+  .lf-tabs li {
+    @apply text-xs text-gray-600 pr-2 flex items-center font-normal opacity-50;
+  }
+  .lf-tabs li.active {
+    @apply font-bold opacity-100;
+  }
+  .lf-tabs .lf-icon {
+    @apply px-1;
+  }
+
+  /*
+   * Text input
+   */
+  .lf-input-container {
     position: relative;
+    @apply my-4 z-50;
   }
-  .lt-input-container .lt-icon {
+  .lf-input-container .lf-icon {
     position: absolute;
-    top: 25%;
-    left: 8px;
+    top: 4px;
+    left: 5px;
   }
-  .lt-input-container input {
-    @apply w-screen;
+  .lf-input-container input {
+    width: 100%;
+    @apply border border-gray-200 rounded rounded-sm p-1 pl-8;
+  }
+
+  /*
+   * Search container
+   */
+  .lf-container {
+    @apply m-2;
+  }
+  .lf-grid {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  /*
+   * Card
+   */
+  .lf-card {
+    position: relative;
+    overflow: hidden;
+    @apply h-32 bg-white rounded rounded-sm shadow-md shadow-gray-300;
+  }
+  .lf-card-caption {
+    background-color: rgba(78, 78, 78, 0.75);
+    bottom: 0;
+    position: relative;
+    transition: all .2s ease-out;
+    display: block;
+    @apply p-1 text-xs text-white;
+  }
+  .lf-card:hover {
+    cursor: pointer;
+  }
+  .lf-card:hover > .lf-card-caption {
+    bottom: 20px;
+  }
+  
+  /*
+   * Lottie SVG wrapper
+   */
+  .lf-lottie  {
+    @apply w-full h-full p-2;
+  }
+
+  /*
+   * Pagination
+   */
+  .lf-pagination {
+    @apply mt-2 flex justify-center;
+  }
+  .lf-pagination-item {
+    @apply text-xs text-gray-600 p-1 w-8 h-8 font-bold;
+  }
+  .lf-pagination-item.active {
+    background-color: rgb(31, 164, 171);
+    @apply rounded rounded-full text-white;
   }
 }

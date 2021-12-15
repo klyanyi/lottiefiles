@@ -27,19 +27,11 @@ const SearchResultsList = function () {
     <div className="lf-grid my-2">
       {data.results.map(
         (
-          item: { id: string; name: string; lottieUrl: string; gifUrl: string },
+          item: { id: string; name: string; lottieUrl: string },
           idx: number
         ) => {
-          const { id, name, lottieUrl, gifUrl } = item;
-          return (
-            <Lottie
-              key={idx}
-              id={id}
-              name={name}
-              lottieUrl={lottieUrl}
-              gifUrl={gifUrl}
-            />
-          );
+          const { id, name, lottieUrl } = item;
+          return <Lottie key={idx} id={id} name={name} lottieUrl={lottieUrl} />;
         }
       )}
     </div>
@@ -108,7 +100,6 @@ const SearchResultsQuery = function () {
           id
           lottieUrl
           name
-          gifUrl
         }
       }
     }
@@ -126,7 +117,6 @@ const SearchResultsQuery = function () {
           id
           lottieUrl
           name
-					gifUrl
         }
       }
     }

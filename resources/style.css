@@ -443,18 +443,6 @@ html, body {
   line-height: 1.25rem;
 }
 
-h1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
-}
-
-h2 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 /*
    * Tabs
    */
@@ -518,6 +506,7 @@ h2 {
 
 .lf-container {
   margin: 0.5rem;
+  overflow: scroll;
 }
 
 .lf-grid {
@@ -677,4 +666,32 @@ h2 {
 
 .font-bold {
   font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+  /* Prevent the page to be scrollable */
+  /* overflow: hidden; */
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* Prevent the content from being selectionable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+   -ms-user-select: auto;
+       user-select: auto;
 }

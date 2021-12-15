@@ -46,6 +46,7 @@
    */
   .lf-container {
     @apply m-2;
+    overflow: scroll;
   }
   .lf-grid {
     @apply grid grid-cols-2 gap-4;
@@ -94,4 +95,31 @@
     background-color: rgb(31, 164, 171);
     @apply rounded rounded-full text-white;
   }
+}
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+
+  /* Prevent the page to be scrollable */
+  /* overflow: hidden; */
+
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /* Prevent the content from being selectionable */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
 }

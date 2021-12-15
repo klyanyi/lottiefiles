@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Icon from '../Icon';
-import { searchQuery } from '../../atom';
+import Icon from '../Icon/Icon';
+import { searchQuery } from '../../recoil/atom';
 import { useSetRecoilState } from 'recoil';
 
 const SearchInput = function () {

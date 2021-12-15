@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Icon from '../Icon';
+import Icon from '../Icon/Icon';
 
 const NavLink = function (props: {
   name: string;

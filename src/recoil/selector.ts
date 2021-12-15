@@ -1,5 +1,5 @@
-import { selector } from 'recoil';
 import { searchResult } from './atom';
+import { selector } from 'recoil';
 
 export const searchPagination = selector({
   key: 'searchPagination',

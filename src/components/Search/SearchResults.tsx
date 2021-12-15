@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 import { gql, useQuery } from '@apollo/client';
-import { searchPageNum, searchQuery, searchResult } from '../../atom';
+import { searchPageNum, searchQuery, searchResult } from '../../recoil/atom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import Lottie from './Lottie';
-import { searchPagination } from '../../selector';
+import { searchPagination } from '../../recoil/selector';
 
 const SearchResultsTitle = function () {
   const query = useRecoilValue(searchQuery);

@@ -8,6 +8,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
     "airbnb-typescript",
     "prettier"
   ],
@@ -45,6 +46,16 @@
     ],
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-non-null-assertion": "off",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ]
   }
 }

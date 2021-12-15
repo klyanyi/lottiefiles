@@ -3,6 +3,7 @@ import React from 'react';
 const Icon = function (props: { icon: string; fillColor?: string }) {
   const { icon, fillColor } = props;
 
+  // TODO: simple map - use better type-checks
   const ICONS: any = {
     search: (
       <svg viewBox="0 0 24 24" width="16" height="16">

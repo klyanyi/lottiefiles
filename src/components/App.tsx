@@ -7,15 +7,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* better use some sort of routing here :) */}
         <Navbar
-          brand={{ name: 'Login', to: '/' }}
+          brand={{ name: 'Login', to: '/' }} // TODO: implement authentication :/
           links={[
             { name: 'Convert', to: '/convert', icon: 'convert' }, // dummy
             { name: 'Preview', to: '/preview', icon: 'preview' }, // dummy
             { name: 'Search', to: '/search', icon: 'search' },
           ]}
         />
+        {/* better use some sort of proper react routing here :) */}
         <Search />
       </div>
     );

@@ -29,7 +29,7 @@ const Navbar = function (props: {
 
   const onClick = (index: number, to: string) => {
     setActiveIndex(index);
-    window.postMessage('nativeLog', 'Called from tssw');
+    console.log(to); // TODO: handle route
   };
 
   const NavLinks: any = () =>

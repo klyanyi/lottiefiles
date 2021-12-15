@@ -6,11 +6,12 @@ import sketch from 'sketch';
 const webviewIdentifier = 'lottiefiles.webview';
 
 function insertSVG(svgString) {
-  // TODO: handle error
   const doc = sketch.getSelectedDocument();
   const selectedArtboard = doc.selectedLayers.layers[0];
 
   const group = sketch.createLayerFromData(svgString, 'svg');
+  // TODO: proper error handling when user did not select Artboard
+  // here we expect user always selected the artboard
   group.parent = selectedArtboard;
 
   return group;
@@ -23,7 +24,6 @@ function process(svgData) {
     // TODO: something wrong happened, show something to the user
     return;
   }
-  // TODO: handle error
   insertSVG(svgString);
 
   UI.message(`Inserted ${name} ${id} on LottieFiles`);

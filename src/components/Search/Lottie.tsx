@@ -2,19 +2,16 @@ import * as React from 'react';
 
 import lottie from 'lottie-web';
 
-const Lottie = function (
-  this: any,
-  props: {
-    id: string;
-    name: string;
-    lottieUrl: string;
-  }
-) {
+const Lottie = function (props: {
+  id: string;
+  name: string;
+  lottieUrl: string;
+}) {
   const { id, name, lottieUrl } = props;
 
   const lottieContainer = React.useRef<HTMLDivElement>(null);
 
-  const [svgNode, setSvgNode] = React.useState<any>();
+  const [svgNode, setSvgNode] = React.useState<NodeList>();
 
   React.useEffect(() => {
     if (!lottieContainer.current?.hasChildNodes()) {
@@ -33,17 +30,19 @@ const Lottie = function (
   }, [lottieContainer.current]);
 
   const onClick = () => {
-    // convert SVG element to plain string
-    const svgString = new XMLSerializer().serializeToString(svgNode.item(0));
+    if (svgNode?.item(0)) {
+      // convert SVG element to plain string
+      const svgString = new XMLSerializer().serializeToString(svgNode.item(0)!);
 
-    window.postMessage(
-      'nativeLog',
-      JSON.stringify({
-        svgString,
-        name,
-        id,
-      })
-    );
+      window.postMessage(
+        'nativeLog',
+        JSON.stringify({
+          svgString,
+          name,
+          id,
+        })
+      );
+    }
   };
 
   return (

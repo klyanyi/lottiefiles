@@ -21,7 +21,7 @@ const SearchInput = function () {
 
   return (
     <div className="lf-input-container">
-      <Icon icon="search" />
+      <Icon icon="search" fillColor="rgb(24, 200, 202)" />
       <input
         type="text"
         placeholder="Search..."

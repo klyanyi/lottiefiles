@@ -23,17 +23,27 @@ const SearchResultsTitle = function () {
 const SearchResultsList = function () {
   const data = useRecoilValue(searchResult);
 
-  return (
-    <div className="lf-grid my-2">
+  const ListItems = () => (
+    <>
       {data.results.map(
         (
           item: { id: string; name: string; lottieUrl: string },
           idx: number
-        ) => {
-          const { id, name, lottieUrl } = item;
-          return <Lottie key={idx} id={id} name={name} lottieUrl={lottieUrl} />;
-        }
+        ) => (
+          <Lottie
+            key={idx}
+            id={item.id}
+            name={item.name}
+            lottieUrl={item.lottieUrl}
+          />
+        )
       )}
+    </>
+  );
+
+  return (
+    <div className="lf-grid my-2">
+      <ListItems />
     </div>
   );
 };
@@ -45,11 +55,8 @@ const SearchResultsPagination = function () {
 
   if (!pagination.list) return null;
 
-  return (
-    <div className="lf-pagination">
-      <button className="lf-pagination-item">
-        <span>...</span>
-      </button>
+  const PaginationItems = () => (
+    <>
       {pagination.list.map((item, index) => (
         <button
           key={index}
@@ -61,6 +68,15 @@ const SearchResultsPagination = function () {
           <span>{item}</span>
         </button>
       ))}
+    </>
+  );
+
+  return (
+    <div className="lf-pagination">
+      <button className="lf-pagination-item">
+        <span>...</span>
+      </button>
+      <PaginationItems />
       <button className="lf-pagination-item">
         <span>...</span>
       </button>
@@ -68,13 +84,14 @@ const SearchResultsPagination = function () {
   );
 };
 
-const SearchResults = function () {
+const SearchResultsContainer = function () {
   const query = useRecoilValue(searchQuery);
   const data = useRecoilValue(searchResult);
 
   if (!data) return <div>Loading...</div>;
 
   return (
+    // TODO: make this a scrollable container
     <div className="lf-container">
       <SearchResultsTitle />
       <SearchResultsList />
@@ -132,7 +149,7 @@ const SearchResultsQuery = function () {
   if (loading) return <div>Loading...</div>;
   if (error) return <pre>{error.message}</pre>;
 
-  return <SearchResults />;
+  return <SearchResultsContainer />;
 };
 
 export default SearchResultsQuery;

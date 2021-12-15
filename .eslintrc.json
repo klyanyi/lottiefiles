@@ -22,6 +22,11 @@
     "project": ["./tsconfig.json"]
   },
   "plugins": ["import", "react", "@typescript-eslint", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "prettier/prettier": "warn",
     "arrow-body-style": "off",
